@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" id="http://www.example.org/helloworld">
+	<name>eHo.st</name>
+	<description>Adds a toolbar button to upload images to eHo.st</description>
+	<author email="sjmulder@gmail.com">Sijmen Mulder</author>
+	<icon src="images/icon.png" />
+</widget>

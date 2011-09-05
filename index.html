@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+	By Sijmen Mulder <sjmudler@gmail.com>
+	Published under the BSD licence.
+-->
+<html>
+<script>
+
+	window.addEventListener('load', function() {
+		button = opera.contexts.toolbar.createItem({
+			title: 'Upload to eHo.st',
+			icon: 'images/button.png',
+			
+			onclick: function() {
+				var tab = opera.extension.tabs.getFocused();
+				if (tab) {
+					tab.postMessage({});
+				}
+			}
+		});
+
+		opera.contexts.toolbar.addItem(button);
+	
+		opera.extension.onmessage = function(event) {
+			var url = 'http://eho.st/' + event.data;
+			opera.extension.tabs.create({ url: url, focused: true });
+		};
+	}, false);
+
+</script>
